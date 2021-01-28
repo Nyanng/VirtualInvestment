@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://unpkg.com/lightweight-charts@1.0.0/dist/lightweight-charts.standalone.production.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/func.js"></script>
+    <script src="js/jquery.modal.min.js"></script>
+    <script>
+        document.oncontextmenu = document.onmousedown = (evt) => { if (evt.button == 2) return false; };
+    </script>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/jquery.modal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,700&display=swap">
+    <title>WebHTS</title>
+</head>
+
+<body>
+    <div id="wrap">
+        <div class="serv alert">
+            <div class="title">서버 응답 대기중...</div>
+            <div class="label">잠시만 기다려 주세요.</div>
+            <div class="logout button red" onclick="location.href='login.html'">로그아웃</div>
+        </div>
+        <div id="stock-graph"></div>
+        <div id="menu">
+            <div id="stock-list-wrap">
+                <h1><i class="xi-trending-up"></i> 주식 목록</h1>
+                <div id="stock-list">
+                    <table id='stock-table'>
+                        <thead>
+                            <tr>
+                                <th>이름</th>
+                                <th>현재가</th>
+                                <th>보유량</th>
+                                <th>상태</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div id="stock-order">
+                <h1><i class="xi-enter"></i> 주식 주문</h1>
+                <div class="cont">
+                    <div class="wrap rig-margin">
+                        <div class='title'>
+                            <h1>이름</h1>
+                        </div>
+                        <div class="label" id="now-name">-</div>
+                    </div>
+                    <div class="wrap rig-margin">
+                        <div class='title'>
+                            <h1>현재 가격</h1>
+                        </div>
+                        <div class="label" id="now-price">-</div>
+                    </div>
+                    <div class="wrap rig-margin">
+                        <div class='title'>
+                            <h1>수량</h1>
+                        </div>
+                        <input type='number' id='count' min='0' value="1"
+                            onkeypress='return event.charCode >= 48 && event.charCode <= 57' onkeyup='checkV();'>
+                    </div>
+                    <div class="wrap">
+                        <div class='title'>
+                            <h1>매매 유형</h1>
+                        </div>
+                        <div class="checkbox-wrap">
+                            <label for='buy' id='buyl' class='checkbox' onclick='checkV()'>매수
+                                <input type='radio' id='buy' name="sb" value="buy">
+                                <div class='checkmark'>
+                                </div>
+                            </label>
+                            <div class="margin"></div>
+                            <label for='sell' id='selll' class='checkbox' onclick="checkV()">매도
+                                <input type='radio' id='sell' name="sb" value="sell">
+                                <div class='checkmark'></div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="ord button" onclick="orderSend()">주문 채결</div>
+                <div class="margin"></div>
+                <div class="checkbox-wrap">
+                    <label for='always-max' class='checkbox'>항상 최대 수량으로
+                        <input type='checkbox' id='always-max' name="always-max">
+                        <div class='checkmark'></div>
+                    </label>
+                    <div class="margin"></div>
+                    <label for='no-alert' class='checkbox'>주문 확인창 제거
+                        <input type='checkbox' id='no-alert' name="no-alert">
+                        <div class='checkmark'></div>
+                    </label>
+                </div>
+            </div>
+            <div id="my-info">
+                <div class="label">나의 학번</div>
+                <div class="label nomg" id="my-name"></div>
+
+                <div class="label">나의 포인트</div>
+                <div class="label nomg" id="my-point">-</div>
+
+                <div class="label">나의 자산</div>
+                <div class="label nomg" id="my-all">-</div>
+
+                <div class="logout button red" onclick="location.href='login.html'">
+                    로그아웃
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

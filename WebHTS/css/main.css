@@ -1,0 +1,441 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background-color: #1b262d;
+}
+
+div#wrap {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 500px;
+      grid-template-columns: auto 500px;
+}
+
+div#wrap div#stock-graph {
+  width: 100%;
+  height: 100vh;
+}
+
+div#wrap div#menu {
+  display: -ms-grid;
+  display: grid;
+  height: 100vh;
+  -ms-grid-rows: 40% 300px auto;
+      grid-template-rows: 40% 300px auto;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+div#wrap div#menu div#stock-list-wrap {
+  padding: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+div#wrap div#menu div#my-stock-list-wrap {
+  padding: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+div#wrap div#menu div#stock-order {
+  padding: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+div#wrap div#menu div#my-info {
+  padding: 10px;
+}
+
+h1 {
+  color: #c4c7c9;
+}
+
+table {
+  width: 100%;
+  border-left: 2px solid #00000000;
+  color: #c4c7c9;
+  text-align: center;
+  border-collapse: collapse;
+}
+
+table td,
+table th {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  padding: 5px 0;
+}
+
+table tr {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+table tbody tr.enabled {
+  border-left: 2px solid #2f9726;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+table tbody tr:hover {
+  cursor: pointer;
+  border-left: 2px solid #2f9726;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.floating-tooltip-2 {
+  width: 135px;
+  height: 90px;
+  position: absolute;
+  display: none;
+  padding: 5px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 15px;
+  font-weight: 700;
+  color: #131722;
+  background-color: rgba(255, 255, 255, 0.85);
+  text-align: left;
+  z-index: 1000;
+  top: 12px;
+  left: 12px;
+  pointer-events: none;
+  border: 1px solid #009688;
+  border-radius: 2px;
+}
+
+select {
+  display: block;
+  width: 100%;
+  height: 40px;
+  padding: 5px 10px;
+  border-radius: .2em;
+  border: 2px solid #666666;
+  background-color: #1b262d;
+  -webkit-transition: .3s;
+  transition: .3s;
+  color: #fff;
+}
+
+select:focus {
+  border: 2px solid #0077ffb2;
+}
+
+select:disabled {
+  color: #8d8d8d;
+  background-color: #414141;
+}
+
+input {
+  display: block;
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  border-radius: .2em;
+  background-color: #1b262d;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+input[type="text"], input[type="password"], input[type="number"] {
+  -webkit-user-select: text;
+     -moz-user-select: text;
+      -ms-user-select: text;
+          user-select: text;
+  color: #fff;
+  border: 2px solid #666666;
+}
+
+input[type="text"]:focus, input[type="password"]:focus, input[type="number"]:focus {
+  border: 2px solid #0077ffb2;
+}
+
+input[type="text"]:disabled, input[type="password"]:disabled, input[type="number"]:disabled {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  pointer-events: none;
+  color: #8d8d8d;
+  background-color: #5f5f5f;
+}
+
+input[type="password"]:not(:placeholder-shown) {
+  font-family: sans-serif;
+}
+
+input[type="number"]:invalid {
+  border: 2px solid #ff2727;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+          appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -webkit-appearance: textfield;
+     -moz-appearance: textfield;
+          appearance: textfield;
+  margin: 0;
+}
+
+div.title {
+  vertical-align: middle;
+  height: 30px;
+  line-height: 30px;
+  margin-bottom: 5px;
+}
+
+div.title h1 {
+  margin: 5px 0;
+  line-height: 20px;
+  height: 20px;
+  display: block;
+  font-weight: 500;
+  font-size: 20px;
+  color: #fff;
+}
+
+div.split {
+  height: 1px;
+  display: block;
+  background-color: #656477;
+  margin: 10px 0;
+}
+
+div.margin {
+  margin: 2px 0;
+}
+
+.checkbox-wrap {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 100%;
+      grid-template-columns: 100%;
+  margin-bottom: 10px;
+}
+
+.checkbox {
+  vertical-align: middle;
+  font-size: 15px;
+  font-weight: 700;
+  text-align: left;
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  color: #fff;
+}
+
+.checkbox.disabled,
+.checkbox .disabled {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  pointer-events: none;
+  color: #8d8d8d;
+}
+
+.checkbox.disabled div.checkmark,
+.checkbox .disabled div.checkmark {
+  background-color: #b8b8b8;
+}
+
+.checkbox .checkmark {
+  -webkit-transition: .2s;
+  transition: .2s;
+  position: absolute;
+  top: 3px;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: #eee;
+}
+
+.checkbox input[type='radio'],
+.checkbox input[type='checkbox'] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkbox:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+.checkbox input:checked ~ .checkmark {
+  background-color: #0084ff;
+}
+
+.checkbox .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+label {
+  display: inline;
+  color: #fff;
+}
+
+div.label {
+  vertical-align: middle;
+  color: #fff;
+  font-size: 20px;
+  height: 30px;
+  line-height: 30px;
+}
+
+div.label.conf {
+  color: #000;
+  font-weight: 700;
+}
+
+div.label.conf > .conf-count {
+  display: inline;
+  color: #000;
+  font-weight: 700;
+}
+
+div.label.nomg {
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+div.button {
+  display: block;
+  text-align: center;
+  line-height: 40px;
+  width: 100%;
+  height: 40px;
+  border-radius: .2em;
+  -webkit-transition: .3s;
+  transition: .3s;
+  cursor: pointer;
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  background-color: #0084ff;
+}
+
+div.button.red {
+  background-color: #f03333;
+}
+
+div.button.red:active {
+  background-color: #d42e2e;
+}
+
+div.button.green {
+  background-color: #1aa30e;
+}
+
+div.button.green:active {
+  background-color: #386d23;
+}
+
+div.button.disabled {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  pointer-events: none;
+  cursor: default;
+  background-color: #888 !important;
+}
+
+div.button:active {
+  background-color: #0068c9;
+}
+
+div.cont {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+div.cont div.wrap {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+div.cont input,
+div.cont div.wrap {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  min-width: 0px;
+}
+
+div.cont input.cent-margin,
+div.cont div.wrap.cent-margin {
+  margin: 0 10px;
+}
+
+div.cont input.rig-margin,
+div.cont div.wrap.rig-margin {
+  margin-right: 15px;
+}
+
+div.alert {
+  display: -ms-grid;
+  display: grid;
+  z-index: 9999;
+  background-color: #2424249d;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+div.alert div.title {
+  margin: auto;
+  color: #24d86f;
+  text-align: center;
+  font-size: 60px;
+}
+
+div.alert div.label {
+  margin: auto;
+  color: #ffffff;
+  text-align: center;
+  font-size: 35px;
+}
+
+div.alert div.button {
+  margin: auto;
+  width: 500px;
+}
+/*# sourceMappingURL=main.css.map */

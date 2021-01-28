@@ -1,0 +1,13 @@
+/home/mingi/Desktop/WebServer/bin/Release/netcoreapp3.1/WebServer
+/home/mingi/Desktop/WebServer/bin/Release/netcoreapp3.1/WebServer.deps.json
+/home/mingi/Desktop/WebServer/bin/Release/netcoreapp3.1/WebServer.runtimeconfig.json
+/home/mingi/Desktop/WebServer/bin/Release/netcoreapp3.1/WebServer.runtimeconfig.dev.json
+/home/mingi/Desktop/WebServer/bin/Release/netcoreapp3.1/WebServer.dll
+/home/mingi/Desktop/WebServer/bin/Release/netcoreapp3.1/WebServer.pdb
+/home/mingi/Desktop/WebServer/bin/Release/netcoreapp3.1/Fleck.dll
+/home/mingi/Desktop/WebServer/obj/Release/netcoreapp3.1/WebServer.csprojAssemblyReference.cache
+/home/mingi/Desktop/WebServer/obj/Release/netcoreapp3.1/WebServer.AssemblyInfoInputs.cache
+/home/mingi/Desktop/WebServer/obj/Release/netcoreapp3.1/WebServer.AssemblyInfo.cs
+/home/mingi/Desktop/WebServer/obj/Release/netcoreapp3.1/WebServer.csproj.CopyComplete
+/home/mingi/Desktop/WebServer/obj/Release/netcoreapp3.1/WebServer.dll
+/home/mingi/Desktop/WebServer/obj/Release/netcoreapp3.1/WebServer.pdb

@@ -1,0 +1,131 @@
+html,
+body {
+  z-index: -9999;
+  display: -ms-grid;
+  display: grid;
+  background: #252525;
+  height: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+div.label {
+  vertical-align: middle;
+  color: #fff;
+  font-size: 20px;
+  height: 30px;
+  line-height: 30px;
+  font-weight: 700;
+}
+
+div.label.sub {
+  color: #f00;
+  font-size: 12px;
+}
+
+div.label.conf {
+  color: #000;
+  font-weight: 400;
+}
+
+div.label.conf > .conf-count {
+  display: inline;
+  color: #000;
+  font-weight: 700;
+}
+
+div.label.conf.bold {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+div.label.nomg {
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+div#form {
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 350px;
+  border-radius: .3em;
+}
+
+div#form div#title {
+  color: #fff;
+  font-size: 40px;
+}
+
+div#form div#sub {
+  color: #fff;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+div#form input {
+  display: block;
+  width: 100%;
+  padding: 10px 20px;
+  margin: 0 0 10px 0;
+  border-radius: .2em;
+  background-color: #fff;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+div#form input[type="text"], div#form input[type="password"], div#form input[type="number"] {
+  color: #000;
+  border: 2px solid #cecece;
+}
+
+div#form input[type="text"]:focus, div#form input[type="password"]:focus, div#form input[type="number"]:focus {
+  border: 2px solid #0077ffb2;
+}
+
+div#form input[type="password"]:not(:placeholder-shown) {
+  font-family: sans-serif;
+}
+
+div#form input[type="submit"] {
+  cursor: pointer;
+  color: #fff;
+  border: none;
+  background-color: #0084ff;
+}
+
+div#form input[type="submit"]:active {
+  background-color: #0068c9;
+}
+
+div#form input[type="text"]:invalid, div#form input[type="number"]:invalid {
+  border: 2px solid #ff2727;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+div#form input[type="number"]::-webkit-inner-spin-button, div#form input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+          appearance: none;
+}
+
+div#form input[type="number"] {
+  -webkit-appearance: textfield;
+     -moz-appearance: textfield;
+          appearance: textfield;
+}
+/*# sourceMappingURL=login.css.map */

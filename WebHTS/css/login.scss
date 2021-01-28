@@ -1,0 +1,125 @@
+html,
+body {
+    z-index: -9999;
+    display: grid;
+    background: rgb(37, 37, 37);
+    height: 100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    box-sizing: border-box;
+    user-select: none;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+div.label {
+    vertical-align: middle;
+    color: #fff;
+    font-size: 20px;
+    height: 30px;
+    line-height: 30px;
+    font-weight: 700;
+
+    &.sub {
+        color: #f00;
+        font-size: 12px;
+    }
+
+    &.conf {
+        color: #000;
+        font-weight: 400;
+
+        &>.conf-count {
+            display: inline;
+            color: #000;
+            font-weight: 700;
+        }
+
+        &.bold {
+            font-size: 30px;
+            ;
+            font-weight: 700;
+        }
+    }
+
+    &.nomg {
+        font-weight: 700;
+        margin-bottom: 15px;
+    }
+}
+
+div#form {
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    border-radius: .3em;
+
+    div#title {
+        color: #fff;
+        font-size: 40px;
+    }
+
+    div#sub {
+        color: #fff;
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    input {
+        display: block;
+        width: 100%;
+        padding: 10px 20px;
+        margin: 0 0 10px 0;
+        border-radius: .2em;
+        background-color: #fff;
+        transition: .3s;
+
+        &[type="text"],
+        &[type="password"],
+        &[type="number"] {
+            color: #000;
+            border: 2px solid rgb(206, 206, 206);
+
+            &:focus {
+                border: 2px solid #0077ffb2;
+            }
+        }
+
+        &[type="password"]:not(:placeholder-shown) {
+            font-family: sans-serif;
+        }
+
+        &[type="submit"] {
+            cursor: pointer;
+            color: #fff;
+            border: none;
+            background-color: #0084ff;
+
+            &:active {
+                background-color: #0068c9;
+            }
+        }
+
+        &[type="text"]:invalid,
+        &[type="number"]:invalid {
+            border: 2px solid rgb(255, 39, 39);
+            box-shadow: none;
+        }
+
+        &[type="number"]::-webkit-inner-spin-button,
+        &[type="number"]::-webkit-outer-spin-button {
+            appearance: none;
+        }
+
+        &[type="number"] {
+            appearance: textfield;
+        }
+    }
+
+}
